@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CSS Selectors </title>
+    <!-- Internal CSS :  -->
+    <!-- this is how we use element selector -->
+    <style>
+         /* this is how we use Element selector */
+
+        p{
+            border: 2px solid burlywood;
+        }
+         /* this is how we use ID selector */
+#firstparagraph {
+            color: red;
+        }
+
+        .greenyellowElement {
+            color: greenyellow;
+        }
+        /* this is how we use Class selector */
+
+        .bgBlack {
+            background-color: black;
+        }
+
+        /* this is how we use grouping selector */
+        footer,
+        span {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h3> CSS Selectors </h3>
+    <!-- this is how we use ID selector : -->
+    <p id="firstparagraph"> This is a Simple Paragraph to demonstrate CSS Selectors.</p>
+    <!-- this is how we use Class selector : -->
+    <p id="second paragraph" class="greenyellowElement bgBlack"> This is another Simple Paragraph to demonstrate CSS
+        Selectors.</p>
+    <div>
+        <p> This is yet another Simple Paragraph to demonstrate CSS Selectors.</p>
+        <span>This is Span </span>
+    </div>
+    <footer>This is footer </footer>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  FORM VALIDATION APP  </title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Theme Signup Form</title>
+<style>
+  /* ===== DARK THEME ===== */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background: #1e1e1e;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    width: 350px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00ffe0;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #2a2a2a;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #00ffe0;
+    box-shadow: 0 0 5px #00ffe0;
+  }
+
+  .error {
+    color: #ff4d4d;
+    font-size: 0.85em;
+    margin-bottom: 5px;
+  }
+
+  .password-requirements {
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+
+  .password-requirements span {
+    display: block;
+    margin: 3px 0;
+    color: #aaa;
+  }
+
+  .password-requirements span.valid {
+    color: #00ff90;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #00ffe0;
+    color: #121212;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  button:disabled {
+    background: #555;
+    cursor: not-allowed;
+  }
+
+  #successMsg {
+    color: #00ff90;
+    text-align: center;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Sign Up</h2>
+  <form id="signupForm" novalidate>
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+    <div class="error" id="nameError"></div>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <div class="error" id="emailError"></div>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter your password" required>
+    <div class="error" id="passwordError"></div>
+    <div class="password-requirements" id="passwordReq">
+      <span id="lowercase">• Lowercase letter</span>
+      <span id="uppercase">• Uppercase letter</span>
+      <span id="number">• Number</span>
+      <span id="special">• Special character</span>
+      <span id="length">• Minimum 8 characters</span>
+    </div>
+
+    <button type="submit" id="submitBtn">Sign Up</button>
+    <div id="successMsg"></div>
+  </form>
+</div>
+
+<script>
+const form = document.getElementById('signupForm');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+
+const nameError = document.getElementById('nameError');
+const emailError = document.getElementById('emailError');
+const passwordError = document.getElementById('passwordError');
+const successMsg = document.getElementById('successMsg');
+
+// Password requirement elements
+const lowercase = document.getElementById('lowercase');
+const uppercase = document.getElementById('uppercase');
+const number = document.getElementById('number');
+const special = document.getElementById('special');
+const lengthReq = document.getElementById('length');
+
+// ===== Real-time password validation =====
+passwordInput.addEventListener('input', () => {
+  const value = passwordInput.value;
+  
+  // Lowercase
+  if(/[a-z]/.test(value)) lowercase.classList.add('valid');
+  else lowercase.classList.remove('valid');
+
+  // Uppercase
+  if(/[A-Z]/.test(value)) uppercase.classList.add('valid');
+  else uppercase.classList.remove('valid');
+
+  // Number
+  if(/[0-9]/.test(value)) number.classList.add('valid');
+  else number.classList.remove('valid');
+
+  // Special character
+  if(/[!@#$%^&*(),.?":{}|<>]/.test(value)) special.classList.add('valid');
+  else special.classList.remove('valid');
+
+  // Minimum length
+  if(value.length >= 8) lengthReq.classList.add('valid');
+  else lengthReq.classList.remove('valid');
+});
+
+// ===== Form submission =====
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let valid = true;
+
+  // Name validation
+  if(nameInput.value.trim() === '') {
+    nameError.textContent = 'Name is required';
+    valid = false;
+  } else nameError.textContent = '';
+
+  // Email validation
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if(emailInput.value.trim() === '') {
+    emailError.textContent = 'Email is required';
+    valid = false;
+  } else if(!emailInput.value.match(emailPattern)) {
+    emailError.textContent = 'Invalid email format';
+    valid = false;
+  } else emailError.textContent = '';
+
+  // Password validation
+  const pwd = passwordInput.value;
+  const pwdPattern = /^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&*(),.?":{}|<>]).{8,}$/;
+
+  if(pwd === '') {
+    passwordError.textContent = 'Password is required';
+    valid = false;
+  } else if(!pwd.match(pwdPattern)) {
+    passwordError.textContent = 'Password does not meet all requirements';
+    valid = false;
+  } else passwordError.textContent = '';
+
+  if(valid) {
+    successMsg.textContent = 'Signup Successful!';
+    form.reset();
+    // Reset password requirement highlights
+    [lowercase, uppercase, number, special, lengthReq].forEach(el => el.classList.remove('valid'));
+  } else {
+    successMsg.textContent = '';
+  }
+});
+</script>
+
+</body>
+</html>

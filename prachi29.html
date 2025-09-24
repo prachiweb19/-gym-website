@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> More on CSS Selectors </title>
+    <style>
+h1{
+    background-color:rgb(243, 243, 138);
+    color: black;
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center ;
+}
+/* This selector which i've written says any div contains P  inside it and it will apply on all and then will go inside this and will apply on all 
+                                                    or 
+this div p selects in any depth present inside div. */
+
+
+/* if p is contained by any li which is contained by div  */
+
+/* div  p{
+    color: black;
+    background-color: bisque;
+    font-weight: bold;
+    font-style: italic;
+} */
+
+/*  if p is right inside div then this css will be applied  */
+
+/* div > p{
+ color: black;
+    background-color: bisque;
+    font-weight: bold;
+    font-style: italic; 
+
+}*/
+
+/* if p is right after div i.e p is the next sibling of div then this CSS will be applied. */
+
+div + p {
+    color: black;
+    font-weight: bold;
+    background-color:bisque ;
+}
+
+    </style>
+</head>
+<body>
+    <h1> This is more on CSS Selectors !!! </h1>
+    <div class="container">
+        <div class="row">
+            <ul>
+                <li class="item"><p>This is a paragraph inside.</p></li>
+                <li> this will not get affected.</li>
+                <p> this is a paragraph inside a UL </p>
+                
+            </ul>
+            <p> This is a Paragraph.</p>
+        </div>
+        <p> This is another Paragraph.</p>
+    </div>
+    <p> This is Outermost Paragraph. </p>
+</body>
+</html>

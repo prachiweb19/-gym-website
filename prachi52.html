@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Loops: while,Do-while,for & for-each loop </title>
+</head>
+<body>
+<div class="container">
+    This is about loops. 
+</div>
+<script>
+    console.log("This is tutorial of loops ");
+
+    // for loop : 
+    let i = 0;
+    for(i=0;i<3;i++){
+        console.log(i);
+    }
+// how we use loops to iterate array
+
+let friends=["rohan", "sanjeev", "deepti", "pooja", "bharti"];
+for (let index = 0; index < friends.length; index++) {
+     console.log("hey," + friends[index]);
+    
+}
+
+// for-each loop :
+friend.forEach(function f(element)
+{
+console.log("Hie", + element + "to modern JS" )
+});
+
+// for-off  loop :
+for(element of friends){
+    console.log("Hie", + element + "to modern JS");
+}
+
+// iterate an object
+
+// for-In loop
+let employee ={
+    name : "prachi",
+    salary:90000,
+    channel : "cwm"
+}
+for (key in employee){
+    consol.log (`the ${key } of employee is  ${employee[key]}`);
+}
+
+//  while loop :
+let a = 0; 
+while(a<4){
+    console.log (`${a} a is less than 4`);
+    a++;
+}
+
+// Do-While loop :
+do{
+    console.log (`${b} b is less than 4 and we are inside Do-while loop `);
+    b++; }
+while(b<4);
+
+</script>
+</body>
+</html>

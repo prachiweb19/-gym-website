@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> MY PORT FOLIO  </title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:#0f172a;
+      --card:#1e293b;
+      --text:#e2e8f0;
+      --sub:#94a3b8;
+      --accent:#38bdf8;
+    }
+    body.light {
+      --bg:#f8fafc;
+      --card:#e2e8f0;
+      --text:#0f172a;
+      --sub:#475569;
+      --accent:#2563eb;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);color:var(--text);
+      line-height:1.6;transition:background 0.3s,color 0.3s;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    section{padding:80px 20px;max-width:1100px;margin:auto}
+    h2{text-align:center;font-size:2rem;margin-bottom:40px;color:var(--accent)}
+    .btn {
+      padding:10px 16px;border:1px solid var(--accent);
+      border-radius:8px;transition:0.3s;
+      display:inline-block;
+    }
+    .btn:hover{background:var(--accent);color:var(--bg)}
+
+    /* Theme Toggle */
+    .theme-toggle {
+      position:fixed;top:20px;right:20px;
+      background:var(--card);padding:10px;border-radius:50%;
+      cursor:pointer;z-index:999;
+    }
+
+    /* Hero */
+    header{
+      min-height:100vh;display:flex;flex-direction:column;
+      align-items:center;justify-content:center;text-align:center;
+      background:linear-gradient(135deg,var(--card),var(--bg));
+      padding:20px;
+    }
+    header img{
+      width:160px;height:160px;border-radius:50%;object-fit:cover;
+      border:4px solid var(--accent);margin-bottom:20px;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    header h1{font-size:2.5rem;font-weight:800;margin-bottom:10px}
+    header p{color:var(--sub);margin-bottom:20px}
+    .social-links a{margin:0 10px}
+
+    /* About */
+    .about{text-align:center;max-width:800px}
+
+    /* Skills */
+    .skills-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+    .skill-card{
+      background:var(--card);padding:20px;border-radius:12px;
+      transition:transform 0.3s;
+    }
+    .skill-card:hover{transform:translateY(-8px)}
+    .skill-card h3{margin-bottom:15px;color:var(--accent)}
+
+    /* Tech Stack */
+    .tech-grid{display:flex;flex-wrap:wrap;gap:15px;justify-content:center}
+    .tech-item{
+      padding:12px 18px;background:var(--card);
+      border-radius:8px;transition:0.3s;
+    }
+    .tech-item:hover{background:var(--accent);color:var(--bg);transform:scale(1.1)}
+
+    /* Projects */
+    .projects-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+    .project-card{
+      background:var(--card);border-radius:12px;overflow:hidden;
+      transition:transform 0.3s,box-shadow 0.3s;
+    }
+    .project-card:hover{transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,0,0,0.4)}
+    .project-card img{height:180px;width:100%;object-fit:cover}
+    .project-content{padding:15px}
+    .project-content h3{margin-bottom:10px}
+    .tags span{
+      display:inline-block;margin-right:8px;
+      font-size:0.8rem;background:var(--sub);color:#fff;
+      padding:4px 8px;border-radius:6px;
+    }
+    .project-links a{margin-right:10px}
+
+    /* Certifications */
+    .cert-list{list-style:none;padding-left:0;text-align:center}
+    .cert-list li{margin:10px 0}
+
+    /* Additional Skills as Column Grid */
+    .add-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+    }
+    .add-card{
+      background:var(--card);
+      padding:20px;border-radius:12px;
+      text-align:center;transition:transform 0.3s;
+    }
+    .add-card:hover{transform:translateY(-8px)}
+    .add-card h3{color:var(--accent);margin-bottom:10px}
+
+    /* Contact */
+    .contact{text-align:center}
+    .contact p{margin:10px 0}
+    .contact a{color:var(--accent)}
+
+    /* Footer */
+    footer{text-align:center;padding:20px;color:var(--sub);background:var(--card)}
+  </style>
+</head>
+<body>
+  <!-- Theme Toggle -->
+  <div class="theme-toggle" onclick="toggleTheme()">🌓</div>
+
+  <!-- Hero -->
+  <header>
+    <img src="Pictures/my picture.jpg" alt=" Prachi Bhardwaj " />
+    <h1> Prachi Bhardwaj</h1>
+    <p>Frontend Developer • Creating Interactive Web Experiences</p>
+    <div class="social-links">
+      <a href="https://github.com/yourgithub" target="_blank" class="btn">GitHub</a>
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank" class="btn">LinkedIn</a>
+      <a href="resume.pdf" target="_blank" class="btn">Resume</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about">
+      <p>
+        Hi 👋 I’m a Frontend Developer with a passion for crafting responsive, interactive, and user-friendly websites.  
+        I focus on clean code, accessibility, and performance, blending creativity with technical expertise.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Frontend</h3>
+        <p>HTML, CSS, JavaScript, React, Next.js, Tailwind</p>
+      </div>
+      <div class="skill-card">
+        <h3>Backend</h3>
+        <p>Node.js, Express, APIs, MongoDB</p>
+      </div>
+      <div class="skill-card">
+        <h3>Tools</h3>
+        <p>Git, GitHub, Figma, VS Code, Docker</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section id="techstack">
+    <h2>Tech Stack</h2>
+    <div class="tech-grid">
+      <div class="tech-item">React</div>
+      <div class="tech-item">Next.js</div>
+      <div class="tech-item">Tailwind</div>
+      <div class="tech-item">JavaScript</div>
+      <div class="tech-item">Node.js</div>
+      <div class="tech-item">MongoDB</div>
+      <div class="tech-item">Git</div>
+      <div class="tech-item">Docker</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="project1.jpg" alt="Project 1" />
+        <div class="project-content">
+          <h3>Portfolio Website</h3>
+          <p>Responsive personal website built with React and Tailwind.</p>
+          <div class="tags"><span>React</span><span>Tailwind</span></div>
+          <div class="project-links">
+            <a href="https://github.com/yourgithub/portfolio" target="_blank" class="btn">Code</a>
+            <a href="https://yourportfolio.com" target="_blank" class="btn">Live</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="project2.jpg" alt="Project 2" />
+        <div class="project-content">
+          <h3>Task Manager App</h3>
+          <p>Full-stack app for managing daily tasks with authentication.</p>
+          <div class="tags"><span>Node</span><span>MongoDB</span></div>
+          <div class="project-links">
+            <a href="https://github.com/yourgithub/taskmanager" target="_blank" class="btn">Code</a>
+            <a href="https://taskmanager-demo.com" target="_blank" class="btn">Live</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul class="cert-list">
+      <li><a href="#">Responsive Web Design – freeCodeCamp</a></li>
+      <li><a href="#">Frontend Development – Coursera</a></li>
+      <li><a href="#">JavaScript Advanced – Udemy</a></li>
+    </ul>
+  </section>
+
+  <!-- Additional Skills (New Column Style) -->
+  <section id="additional">
+    <h2>Additional Skills</h2>
+    <div class="add-grid">
+      <div class="add-card">
+        <h3>UI/UX Design</h3>
+        <p>Wireframing, prototyping, and creating user-friendly designs.</p>
+      </div>
+      <div class="add-card">
+        <h3>Performance Optimization</h3>
+        <p>Improving load times and web performance metrics.</p>
+      </div>
+      <div class="add-card">
+        <h3>Accessibility</h3>
+        <p>Building inclusive, accessible websites for all users.</p>
+      </div>
+      <div class="add-card">
+        <h3>System Design Basics</h3>
+        <p>Understanding scalable architecture and component design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>Email: <a href="bhardwajprachi775@gmail.com">bhardwajprachi775@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourlinkedin" target="_blank">linkedin.com/in/yourlinkedin</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Prachi Bhardwaj — Frontend Developer | Built with ❤</p>
+  </footer>
+
+  <script>
+    function toggleTheme(){
+      document.body.classList.toggle("light");
+    }
+  </script>
+</body>
+</html>

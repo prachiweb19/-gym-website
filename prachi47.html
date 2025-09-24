@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> String functions/Methods in JavaScript </title>
+    <style></style>
+</head>
+<body>
+    <script>
+        var str = " This is a String";
+        console.log(str);
+        //if you want to return any first occurence of string then we can use or    first occurence of a substring
+        var position = str.indexOf('is');
+        console.log(position);
+//if you want to return any last occurence of string then we can use or    last occurence of a substring
+  position = str.lastIndexOf('is');
+  console.log(position);
+
+//   Substring from a String:
+// slice : it takes negative and positive both values.
+var substr = str.slice(1,7);
+console.log(substr);
+// substring: it  doesn't takes negative value 
+var substr = str.substring(1,7);
+ console.log(substr);
+// replacement of a  string:
+var replaced = str.replace('string ','prachi');
+console.log(str);
+console.log(replaced);
+// convert string into Uppercase & Lowercase
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+// concate/add two strings:
+var newString = str.concat('New string');
+console.log(newString);
+// trim : remove white spaces
+var strwithwhitespaces = " this contains                 whitespace    !!!";
+console.log(strwithwhitespaces.trim()); 
+// extract characters from a string:
+var char3 = str.charAt(3);
+console.log(char3);
+// slicing of a string :
+console.log(str[2]);
+        
+    </script>
+</body>
+</html>

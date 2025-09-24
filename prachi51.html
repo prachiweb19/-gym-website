@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> INTERACTION:  using Alert, Prompt,Confirm </title>
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        this is a Page
+    </div>
+    <script>
+        // Alert in JavaScript - does not return anything 
+        alert("this is a message ");
+
+         // Prompt in JavaScript - for example you're playing a game online then a promt will show to ask your name 
+        let name = prompt("what is your name?","guest");
+        console.log(name);
+
+        // confirm : use when you want to delete any file or some data then system will give a warning with the help of "confirm you can do that"
+let deletepost = confirm("do you really  want to delete  this post ?");
+console.log(deletepost);
+
+if (deletepost){
+    console.log("your post has been deleted successfully")
+}
+else {
+    console.log("your post hasn't been deleted ")
+}
+
+
+
+    </script>
+</body>
+</html>

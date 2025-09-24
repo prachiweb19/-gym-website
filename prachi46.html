@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Strings and it's methods in JavaScript </title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <div id="content"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde expedita nisi nemo sed nesciunt praesentium repudiandae ipsum neque laborum. Quasi vitae ducimus eum earum nesciunt iusto nobis! Animi eum dicta, quae ipsa ad magni corporis.</p>
+    </div>
+    <script>
+        var string = "this";
+        var name = "prachi";
+        var message ="prachi is a nice girl!!!";
+        var channel = 'codewithMe';
+        // Temp: we can use it to complete your string if you want to make big template of strings 
+        var temp = `${name} is a nice person & she has a channel called ${channel}`;
+        console.log(string  + name + message  );
+        console.log(temp);
+// find out length of a string:
+var len = name.length;
+console.log(`length of name is ${len}`);
+// Escape sequence character:
+console.log("hello world\n prachi");
+console.log("hello world\t prachi");
+console.log("hello world\\ prachi");
+// we can create string bu using  string constructor
+
+// var y = new string('this');
+// console.log(y); 
+
+// insertion of an element by javascript 
+document.getElementById('content').innerHTML='<h3> this is an h3 heading</h3>'
+
+
+    </script>
+</body>
+</html>
