@@ -24,7 +24,8 @@ GymWebsite/
 ---
 
 ## ⚙ How to Run Locally
-1. Download or clone this repository:
-   Check it out here: 
+1. Download or clone this repository
+   
+   Check it out here:  https://prachiweb19.github.io/-gym-website
 
    
