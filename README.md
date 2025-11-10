@@ -23,7 +23,7 @@ GymWebsite/
 └── README.md
 ---
 
-## ⚙ How to Run Locally
+## ⚙ How to Use
 
 1. Download or clone this repository
    
