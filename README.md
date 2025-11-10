@@ -25,7 +25,6 @@ GymWebsite/
 
 ## ⚙ How to Run Locally
 1. Download or clone this repository:
-   ```bash
-   git clone https://github.com/prachiweb19/gym-website.git
+   Check it out here: 
 
    
